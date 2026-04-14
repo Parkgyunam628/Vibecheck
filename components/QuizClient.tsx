@@ -38,6 +38,7 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
       setCurrentIndex((i) => i + 1);
       setSelected(null);
       setAnimating(false);
+      window.scrollTo({ top: 0, behavior: "instant" });
     }, 200);
   }
 
