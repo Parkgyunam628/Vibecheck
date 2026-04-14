@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Quiz } from "@/lib/types";
 import { calculateResult } from "@/lib/quizzes";
@@ -11,6 +11,10 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [selected, setSelected] = useState<string | null>(null);
   const [animating, setAnimating] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [currentIndex]);
 
   const question = quiz.questions[currentIndex];
   const progress = (currentIndex / quiz.questions.length) * 100;
@@ -38,7 +42,6 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
       setCurrentIndex((i) => i + 1);
       setSelected(null);
       setAnimating(false);
-      window.scrollTo({ top: 0, behavior: "instant" });
     }, 200);
   }
 
