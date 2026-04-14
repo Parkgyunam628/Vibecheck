@@ -41,12 +41,12 @@ export function ShareButtons({
   const url =
     typeof window !== "undefined"
       ? window.location.href
-      : `https://vibecheck.app/test/${quiz.slug}/result/${result.id}`;
+      : `https://vibecheck-tawny.vercel.app/test/${quiz.slug}/result/${result.id}`;
 
   const shareMessage = useMemo(
     () =>
-      `${result.shareText}\n\nI got ${result.emoji} ${result.title} on ${quiz.title}.\n${url}`,
-    [quiz.title, result.emoji, result.shareText, result.title, url]
+      `${result.shareText}\n${url}`,
+    [result.shareText, url]
   );
 
   function flashCopied(type: "link" | "result") {
