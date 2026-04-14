@@ -1,23 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Quiz } from "@/lib/types";
 import { calculateResult } from "@/lib/quizzes";
 
 export function QuizClient({ quiz }: { quiz: Quiz }) {
   const router = useRouter();
+  const topRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [selected, setSelected] = useState<string | null>(null);
   const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
-    requestAnimationFrame(() => {
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    });
+    topRef.current?.scrollIntoView({ block: "start" });
   }, [currentIndex]);
 
   const question = quiz.questions[currentIndex];
@@ -50,7 +47,7 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div ref={topRef} className="min-h-screen bg-gray-50 flex flex-col">
       <div className="w-full h-1.5 bg-gray-200">
         <div
           className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500"
