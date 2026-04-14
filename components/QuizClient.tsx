@@ -13,7 +13,11 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
   const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
   }, [currentIndex]);
 
   const question = quiz.questions[currentIndex];
