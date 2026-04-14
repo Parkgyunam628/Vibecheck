@@ -24,7 +24,8 @@ export function DownloadResultCard({
       const blob = await res.blob();
       const file = new File([blob], `${quiz.slug}-${result.id}.png`, { type: "image/png" });
 
-      if (navigator.canShare?.({ files: [file] })) {
+      const isMobile = navigator.maxTouchPoints > 0;
+      if (isMobile && navigator.canShare?.({ files: [file] })) {
         await navigator.share({ files: [file] });
       } else {
         const link = document.createElement("a");
