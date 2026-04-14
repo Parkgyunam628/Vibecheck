@@ -13,9 +13,6 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
   const [selected, setSelected] = useState<string | null>(null);
   const [animating, setAnimating] = useState(false);
 
-  useEffect(() => {
-    topRef.current?.scrollIntoView({ block: "start" });
-  }, [currentIndex]);
 
   const question = quiz.questions[currentIndex];
   const progress = (currentIndex / quiz.questions.length) * 100;
@@ -43,6 +40,7 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
       setCurrentIndex((i) => i + 1);
       setSelected(null);
       setAnimating(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }, 200);
   }
 
