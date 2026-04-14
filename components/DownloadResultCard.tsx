@@ -20,12 +20,22 @@ export function DownloadResultCard({
     setDownloading(true);
     try {
       const dataUrl = await toPng(cardRef.current, { pixelRatio: 2 });
-      const link = document.createElement("a");
-      link.download = `${quiz.slug}-${result.id}.png`;
-      link.href = dataUrl;
-      link.click();
+      const res = await fetch(dataUrl);
+      const blob = await res.blob();
+      const file = new File([blob], `${quiz.slug}-${result.id}.png`, { type: "image/png" });
+
+      if (navigator.canShare?.({ files: [file] })) {
+        await navigator.share({ files: [file] });
+      } else {
+        const link = document.createElement("a");
+        link.download = file.name;
+        link.href = dataUrl;
+        link.click();
+      }
     } catch (error) {
-      console.error("Failed to download image:", error);
+      if (error instanceof Error && error.name !== "AbortError") {
+        console.error("Failed to save image:", error);
+      }
     } finally {
       setDownloading(false);
     }
