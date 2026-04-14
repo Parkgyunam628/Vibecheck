@@ -4,7 +4,7 @@ import { getQuizBySlug, getAllQuizzes, getRelatedQuizzes } from "@/lib/quizzes";
 import { TestCard } from "@/components/TestCard";
 import { AdBanner } from "@/components/AdBanner";
 import { ShareButtons } from "@/components/ShareButtons";
-import { ShareResultCard } from "@/components/ShareResultCard";
+import { DownloadResultCard } from "@/components/DownloadResultCard";
 
 export async function generateStaticParams() {
   const params: { slug: string; resultId: string }[] = [];
@@ -104,7 +104,7 @@ export default async function ResultPage({
             </div>
           </div>
 
-          <ShareResultCard result={result} quiz={quiz} />
+          <DownloadResultCard result={result} quiz={quiz} />
 
           <div className="mt-4 rounded-2xl bg-gray-50 px-4 py-3 text-sm text-gray-600">
             Copy the caption, drop it in a DM or story, then tell your friends to compare what they get.
