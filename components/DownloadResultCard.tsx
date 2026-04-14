@@ -42,7 +42,7 @@ export function DownloadResultCard({
         disabled={downloading}
         className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3.5 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50 disabled:opacity-60"
       >
-        {downloading ? "⏳ 저장 중..." : "🖼️ 카드 이미지 저장"}
+        {downloading ? "⏳ Saving..." : "🖼️ Save as image"}
       </button>
     </div>
   );
