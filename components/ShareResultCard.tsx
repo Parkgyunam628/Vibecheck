@@ -41,7 +41,7 @@ export function ShareResultCard({
           <div className="mt-5 flex items-center justify-between gap-4 text-sm text-white/78">
             <div>
               <p className="font-semibold">{quiz.title}</p>
-              <p className="mt-1 text-white/70">Send this to the friend who thinks they know your vibe.</p>
+              <p className="mt-1 text-white/70">vibecheck-tawny.vercel.app/test/{quiz.slug}/result/{result.id}</p>
             </div>
             <div className="rounded-full border border-white/20 bg-white/14 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] whitespace-nowrap">
               vibecheck
