@@ -86,7 +86,6 @@ export function ShareButtons({
       "https://twitter.com/intent/tweet" +
       "?text=" + encodeURIComponent(result.shareText + " #personalityquiz #quiz") +
       "&url=" + encodeURIComponent(url);
-    console.log("[VibeCheck] X share URL:", twitterUrl);
     window.open(twitterUrl, "_blank", "noopener,noreferrer");
   }
 
