@@ -60,6 +60,26 @@ export default async function TestIntroPage({
 
         <AdBanner slot="top" />
 
+        {/* Result teasers */}
+        <div className="w-full mt-8">
+          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">
+            What will you get?
+          </p>
+          <div className="grid grid-cols-2 gap-2">
+            {quiz.results.map((result) => (
+              <div
+                key={result.id}
+                className={`rounded-xl bg-gradient-to-br ${result.color} p-3 flex items-center gap-2.5`}
+              >
+                <span className="text-2xl flex-shrink-0">{result.emoji}</span>
+                <span className="text-sm font-bold text-white leading-tight line-clamp-2">
+                  {result.title}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* CTA */}
         <Link
           href={`/test/${quiz.slug}/quiz`}

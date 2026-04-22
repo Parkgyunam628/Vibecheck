@@ -3,8 +3,10 @@ import mainCharacter from "@/data/tests/main-character";
 import geekLevel from "@/data/tests/geek-level";
 import redFlag from "@/data/tests/red-flag";
 import texterType from "@/data/tests/texter-type";
+import villainEra from "@/data/tests/villain-era";
+import travelType from "@/data/tests/travel-type";
 
-const quizzes: Quiz[] = [mainCharacter, geekLevel, redFlag, texterType];
+const quizzes: Quiz[] = [mainCharacter, geekLevel, redFlag, texterType, villainEra, travelType];
 
 export function getAllQuizzes(): Quiz[] {
   return quizzes;

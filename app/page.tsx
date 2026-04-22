@@ -2,6 +2,7 @@ import { getAllQuizzes } from "@/lib/quizzes";
 import { TestCard } from "@/components/TestCard";
 import { FeaturedQuizCard } from "@/components/FeaturedQuizCard";
 import { SurpriseMeButton } from "@/components/SurpriseMeButton";
+import { QuizGrid } from "@/components/QuizGrid";
 import { Footer } from "@/components/Footer";
 import { AdBanner } from "@/components/AdBanner";
 
@@ -70,17 +71,13 @@ export default function HomePage() {
           </section>
         )}
 
-        {/* All Quizzes */}
+        {/* All Quizzes with category filter */}
         <section className="mt-10">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-base font-bold text-gray-900">All Tests</h2>
             <span className="text-xs text-gray-400">{quizzes.length} total</span>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {quizzes.map((quiz) => (
-              <TestCard key={quiz.slug} quiz={quiz} />
-            ))}
-          </div>
+          <QuizGrid quizzes={quizzes} />
         </section>
 
         <div className="mt-10">
