@@ -1,3 +1,10 @@
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
+}
+
 export type EventName =
   | "quiz_clicked"           // any quiz card clicked (source tells where from)
   | "quiz_completed"         // reached result page
@@ -12,21 +19,17 @@ export interface EventProperties {
   result_id?: string;
   share_method?: string;     // "native" | "twitter" | "copy_caption" | "copy_link"
   download_type?: string;    // "card" | "story"
-  source?: string;           // "homepage" | "recommended" | "featured" | "surprise"
+  source?: string;           // "featured" | "curated_social" | "recommended" | "browse"
   category?: string;         // for category_filter_used
   destination_slug?: string;
 }
 
-// Drop-in ready for GA4 / Mixpanel.
-// To activate: set NEXT_PUBLIC_GA_ID in env and add the gtag script to layout.tsx,
-// then uncomment the gtag() call below.
 export function trackEvent(name: EventName, props?: EventProperties): void {
   if (typeof window === "undefined") return;
 
-  // GA4 — uncomment when ready:
-  // if (typeof window.gtag === "function") {
-  //   window.gtag("event", name, props);
-  // }
+  if (typeof window.gtag === "function") {
+    window.gtag("event", name, props);
+  }
 
   if (process.env.NODE_ENV === "development") {
     console.log("[Analytics]", name, props ?? {});
