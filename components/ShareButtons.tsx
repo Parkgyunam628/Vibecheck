@@ -82,15 +82,12 @@ export function ShareButtons({
 
   function shareTwitter() {
     trackEvent("result_shared", { quiz_slug: quiz.slug, result_id: result.id, share_method: "twitter" });
-    const params = new URLSearchParams({
-      text: `${result.shareText} #personalityquiz #quiz`,
-      url,
-    });
-    window.open(
-      `https://twitter.com/intent/tweet?${params.toString()}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    const twitterUrl =
+      "https://twitter.com/intent/tweet" +
+      "?text=" + encodeURIComponent(result.shareText + " #personalityquiz #quiz") +
+      "&url=" + encodeURIComponent(url);
+    console.log("[VibeCheck] X share URL:", twitterUrl);
+    window.open(twitterUrl, "_blank", "noopener,noreferrer");
   }
 
   async function shareNative() {
