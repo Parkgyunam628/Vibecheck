@@ -1,8 +1,10 @@
 import { Quiz } from "@/lib/types";
 import mainCharacter from "@/data/tests/main-character";
 import geekLevel from "@/data/tests/geek-level";
+import redFlag from "@/data/tests/red-flag";
+import texterType from "@/data/tests/texter-type";
 
-const quizzes: Quiz[] = [mainCharacter, geekLevel];
+const quizzes: Quiz[] = [mainCharacter, geekLevel, redFlag, texterType];
 
 export function getAllQuizzes(): Quiz[] {
   return quizzes;
@@ -13,7 +15,22 @@ export function getQuizBySlug(slug: string): Quiz | undefined {
 }
 
 export function getRelatedQuizzes(slug: string, count = 3): Quiz[] {
-  return quizzes.filter((q) => q.slug !== slug).slice(0, count);
+  const current = getQuizBySlug(slug);
+  const others = quizzes.filter((q) => q.slug !== slug);
+
+  if (!current) return others.slice(0, count);
+
+  // Score by tag overlap + same category
+  const scored = others.map((q) => {
+    const tagOverlap = q.tags.filter((t) => current.tags.includes(t)).length;
+    const sameCategory = q.category === current.category ? 1 : 0;
+    return { quiz: q, score: tagOverlap + sameCategory };
+  });
+
+  return scored
+    .sort((a, b) => b.score - a.score)
+    .slice(0, count)
+    .map((s) => s.quiz);
 }
 
 export function calculateResult(

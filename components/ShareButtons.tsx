@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useEffect } from "react";
 import { Quiz, QuizResult } from "@/lib/types";
+import { trackEvent } from "@/lib/analytics";
 
 async function tryClipboardWrite(text: string): Promise<boolean> {
   try {
@@ -58,6 +59,7 @@ export function ShareButtons({
     const ok = await tryClipboardWrite(url);
     if (ok) {
       flashCopied("link");
+      trackEvent("result_shared", { quiz_slug: quiz.slug, result_id: result.id, share_method: "copy_link" });
       return;
     }
 
@@ -69,6 +71,7 @@ export function ShareButtons({
     const ok = await tryClipboardWrite(shareMessage);
     if (ok) {
       flashCopied("result");
+      trackEvent("result_shared", { quiz_slug: quiz.slug, result_id: result.id, share_method: "copy_caption" });
       return;
     }
 
@@ -77,6 +80,7 @@ export function ShareButtons({
   }
 
   function shareTwitter() {
+    trackEvent("result_shared", { quiz_slug: quiz.slug, result_id: result.id, share_method: "twitter" });
     const encoded = encodeURIComponent(
       `${shareMessage} #personalityquiz #quiz`
     );
@@ -91,6 +95,7 @@ export function ShareButtons({
     if (!navigator.share) return;
 
     try {
+      trackEvent("result_shared", { quiz_slug: quiz.slug, result_id: result.id, share_method: "native" });
       await navigator.share({
         title: `${result.emoji} ${result.title}`,
         text: shareMessage,

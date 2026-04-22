@@ -10,6 +10,7 @@ const quiz: Quiz = {
   category: "Personality",
   tags: ["npc", "main character", "personality", "viral"],
   createdAt: "2024-04-14",
+  isTrending: true,
   questions: [
     {
       id: "q1",
@@ -228,7 +229,7 @@ const quiz: Quiz = {
       description:
         "Congrats, you're the protagonist. Life happens TO you and you feel every single moment dramatically and beautifully. You have depth, you have complexity, and you definitely have a carefully curated aesthetic. Your story is one people actually want to follow.",
       shareText:
-        "I got Main Character Energy on the NPC Test 🌟 Find out what energy you are →",
+        "I got Main Character Energy on the Main Character Test 🌟 Find out what energy you are →",
       color: "from-purple-500 to-pink-500",
     },
     {
@@ -238,7 +239,7 @@ const quiz: Quiz = {
       description:
         "You're not just a main character — you're THE ONE. People sense there's something different about you. You move with purpose, handle chaos without flinching, and somehow always know what to do. The prophecy was about you all along.",
       shareText:
-        "I got The Chosen One on the NPC Test ⚡ Find out what energy you are →",
+        "I got The Chosen One on the Main Character Test ⚡ Find out what energy you are →",
       color: "from-yellow-400 to-orange-500",
     },
     {
@@ -248,7 +249,7 @@ const quiz: Quiz = {
       description:
         "You're the best friend everyone wishes they had. Supportive, funny, real — and honestly? The sidekick is always the fan favorite. You bring warmth to every room and loyalty to every relationship. The main character would be LOST without you.",
       shareText:
-        "I got Loyal Sidekick on the NPC Test 🤝 Find out what energy you are →",
+        "I got Loyal Sidekick on the Main Character Test 🤝 Find out what energy you are →",
       color: "from-green-400 to-teal-500",
     },
     {
@@ -258,7 +259,7 @@ const quiz: Quiz = {
       description:
         "You exist. You walk around. You eat snacks. And honestly? That's valid. Not everyone needs to be on their protagonist arc 24/7. You're chilling in the background, unbothered, living your best invisible life. The rarest and most underrated character type.",
       shareText:
-        "I got Pure NPC Energy on the NPC Test 🗿 Find out what energy you are →",
+        "I got Pure NPC Energy on the Main Character Test 🗿 Find out what energy you are →",
       color: "from-gray-400 to-slate-600",
     },
   ],

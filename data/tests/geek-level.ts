@@ -10,6 +10,7 @@ const quiz: Quiz = {
   category: "Personality",
   tags: ["geek", "nerd", "tech", "fandom", "viral"],
   createdAt: "2024-04-14",
+  isTrending: true,
   questions: [
     {
       id: "q1",

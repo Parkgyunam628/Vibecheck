@@ -45,7 +45,7 @@ export function ShareResultCard({
                 vibecheck
               </div>
             </div>
-            <p className="mt-1 text-xs text-white/60 break-all">vibecheck-tawny.vercel.app/test/{quiz.slug}/result/{result.id}</p>
+            <p className="mt-1 text-xs text-white/60 break-all">vibecheck.app/test/{quiz.slug}/result/{result.id}</p>
           </div>
         </div>
       </div>

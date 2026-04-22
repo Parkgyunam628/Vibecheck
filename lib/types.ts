@@ -30,4 +30,6 @@ export interface Quiz {
   questions: QuizQuestion[];
   results: QuizResult[];
   createdAt: string;
+  isNew?: boolean;
+  isTrending?: boolean;
 }

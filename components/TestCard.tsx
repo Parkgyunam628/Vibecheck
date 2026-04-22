@@ -6,9 +6,19 @@ export function TestCard({ quiz }: { quiz: Quiz }) {
     <Link href={`/test/${quiz.slug}`} className="block group">
       <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
         <div
-          className={`bg-gradient-to-br ${quiz.coverColor} h-36 flex items-center justify-center`}
+          className={`bg-gradient-to-br ${quiz.coverColor} h-36 flex items-center justify-center relative`}
         >
           <span className="text-6xl">{quiz.emoji}</span>
+          {quiz.isNew && (
+            <span className="absolute top-2.5 right-2.5 text-xs font-bold bg-white/90 text-emerald-600 px-2 py-0.5 rounded-full shadow-sm">
+              ✨ New
+            </span>
+          )}
+          {!quiz.isNew && quiz.isTrending && (
+            <span className="absolute top-2.5 right-2.5 text-xs font-bold bg-white/90 text-red-500 px-2 py-0.5 rounded-full shadow-sm">
+              🔥 Trending
+            </span>
+          )}
         </div>
         <div className="p-4 bg-white">
           <span className="text-xs font-semibold text-purple-500 uppercase tracking-wide">
