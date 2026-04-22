@@ -5,8 +5,19 @@ import redFlag from "@/data/tests/red-flag";
 import texterType from "@/data/tests/texter-type";
 import villainEra from "@/data/tests/villain-era";
 import travelType from "@/data/tests/travel-type";
+import introvertTest from "@/data/tests/introvert-test";
+import friendRole from "@/data/tests/friend-role";
 
-const quizzes: Quiz[] = [mainCharacter, geekLevel, redFlag, texterType, villainEra, travelType];
+const quizzes: Quiz[] = [
+  mainCharacter,
+  geekLevel,
+  redFlag,
+  texterType,
+  villainEra,
+  travelType,
+  introvertTest,
+  friendRole,
+];
 
 export function getAllQuizzes(): Quiz[] {
   return quizzes;

@@ -5,6 +5,7 @@ import { TestCard } from "@/components/TestCard";
 import { AdBanner } from "@/components/AdBanner";
 import { ShareButtons } from "@/components/ShareButtons";
 import { DownloadResultCard } from "@/components/DownloadResultCard";
+import { ResultReveal } from "@/components/ResultReveal";
 import { Footer } from "@/components/Footer";
 
 export async function generateStaticParams() {
@@ -60,6 +61,7 @@ export default async function ResultPage({
   return (
     <div className="min-h-screen bg-gray-50">
       <main className="max-w-xl mx-auto px-4 py-10">
+        <ResultReveal>
         {/* Breadcrumb badge */}
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-100 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-purple-500 shadow-sm">
           <span>Your result</span>
@@ -149,6 +151,7 @@ export default async function ResultPage({
         <div className="mt-8">
           <AdBanner slot="bottom" />
         </div>
+        </ResultReveal>
       </main>
 
       <Footer />

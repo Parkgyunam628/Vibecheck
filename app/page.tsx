@@ -3,6 +3,7 @@ import { TestCard } from "@/components/TestCard";
 import { FeaturedQuizCard } from "@/components/FeaturedQuizCard";
 import { SurpriseMeButton } from "@/components/SurpriseMeButton";
 import { QuizGrid } from "@/components/QuizGrid";
+import { CompletionBadge } from "@/components/CompletionBadge";
 import { Footer } from "@/components/Footer";
 import { AdBanner } from "@/components/AdBanner";
 
@@ -37,7 +38,10 @@ export default function HomePage() {
           <p className="text-gray-500 text-base mb-6 max-w-sm mx-auto">
             Short personality tests that are more fun when your friends take them too.
           </p>
-          <SurpriseMeButton slugs={allSlugs} />
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <SurpriseMeButton slugs={allSlugs} />
+            <CompletionBadge total={quizzes.length} />
+          </div>
         </section>
 
         <AdBanner slot="top" />
