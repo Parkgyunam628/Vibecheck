@@ -1,4 +1,5 @@
 import { Quiz, QuizResult } from "@/lib/types";
+import { DISPLAY_URL } from "@/lib/site";
 
 export function ShareResultCard({
   result,
@@ -45,7 +46,7 @@ export function ShareResultCard({
                 vibecheck
               </div>
             </div>
-            <p className="mt-1 text-xs text-white/60 break-all">vibecheck.app/test/{quiz.slug}/result/{result.id}</p>
+            <p className="mt-1 text-xs text-white/60 break-all">{DISPLAY_URL}/test/{quiz.slug}/result/{result.id}</p>
           </div>
         </div>
       </div>

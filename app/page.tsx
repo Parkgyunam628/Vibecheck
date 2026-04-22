@@ -7,11 +7,18 @@ import { CompletionBadge } from "@/components/CompletionBadge";
 import { Footer } from "@/components/Footer";
 import { AdBanner } from "@/components/AdBanner";
 
+// Curated section slugs — update as quiz library grows
+const SEND_TO_A_FRIEND = ["friend-role-test", "red-flag-test", "texter-type-test"];
+const FEATURED_SLUG = "main-character-test";
+
 export default function HomePage() {
   const quizzes = getAllQuizzes();
-  const trendingQuizzes = quizzes.filter((q) => q.isTrending);
-  const newQuizzes = quizzes.filter((q) => q.isNew);
-  const featuredQuiz = trendingQuizzes[0] ?? quizzes[0];
+  const slugMap = Object.fromEntries(quizzes.map((q) => [q.slug, q]));
+
+  const featuredQuiz = slugMap[FEATURED_SLUG] ?? quizzes[0];
+  const sendToFriendQuizzes = SEND_TO_A_FRIEND.flatMap((s) =>
+    slugMap[s] ? [slugMap[s]] : []
+  );
   const allSlugs = quizzes.map((q) => q.slug);
 
   return (
@@ -32,11 +39,14 @@ export default function HomePage() {
       <main className="max-w-2xl mx-auto px-4">
         {/* Hero */}
         <section className="pt-10 pb-8 text-center">
-          <h1 className="text-3xl font-black text-gray-900 mb-3 leading-tight">
-            Quizzes worth sharing 🔗
+          <h1 className="text-3xl font-black text-gray-900 mb-2 leading-tight">
+            Which one are you? 🤔
           </h1>
-          <p className="text-gray-500 text-base mb-6 max-w-sm mx-auto">
-            Short personality tests that are more fun when your friends take them too.
+          <p className="text-gray-400 text-sm mb-1">
+            Short quizzes. Sharp results. Worth sending to friends.
+          </p>
+          <p className="text-gray-300 text-xs mb-6 tracking-wide">
+            🎭 Personality &nbsp;·&nbsp; 💙 Relationships &nbsp;·&nbsp; ✈️ Lifestyle
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <SurpriseMeButton slugs={allSlugs} />
@@ -46,39 +56,41 @@ export default function HomePage() {
 
         <AdBanner slot="top" />
 
-        {/* Trending */}
+        {/* Everyone's taking this */}
         <section className="mt-10">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-base font-bold text-gray-900 flex items-center gap-1.5">
-              🔥 <span>Trending Now</span>
-            </h2>
-          </div>
-          <FeaturedQuizCard quiz={featuredQuiz} badge="🔥 Trending" />
+          <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">
+            🔥 Everyone&apos;s taking this
+          </h2>
+          <FeaturedQuizCard quiz={featuredQuiz} badge="🔥 Most popular" />
         </section>
 
-        {/* New this week */}
-        {newQuizzes.length > 0 && (
+        {/* Send to a friend */}
+        {sendToFriendQuizzes.length > 0 && (
           <section className="mt-10">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-base font-bold text-gray-900 flex items-center gap-1.5">
-                ✨ <span>Just Dropped</span>
-              </h2>
-              <span className="text-xs text-emerald-600 font-semibold bg-emerald-50 px-2.5 py-1 rounded-full">
-                New
-              </span>
+            <div className="flex items-baseline justify-between mb-3">
+              <div>
+                <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider">
+                  📲 Tag someone in this
+                </h2>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  Better when you compare with friends
+                </p>
+              </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {newQuizzes.map((quiz) => (
-                <TestCard key={quiz.slug} quiz={quiz} />
+              {sendToFriendQuizzes.map((quiz) => (
+                <TestCard key={quiz.slug} quiz={quiz} source="curated_social" />
               ))}
             </div>
           </section>
         )}
 
-        {/* All Quizzes with category filter */}
+        {/* All Tests */}
         <section className="mt-10">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-base font-bold text-gray-900">All Tests</h2>
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider">
+              🗂️ All Tests
+            </h2>
             <span className="text-xs text-gray-400">{quizzes.length} total</span>
           </div>
           <QuizGrid quizzes={quizzes} />

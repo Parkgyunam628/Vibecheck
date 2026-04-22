@@ -3,12 +3,20 @@
 import { useState } from "react";
 import { Quiz } from "@/lib/types";
 import { TestCard } from "@/components/TestCard";
+import { trackEvent } from "@/lib/analytics";
 
 const ALL = "All";
 
 export function QuizGrid({ quizzes }: { quizzes: Quiz[] }) {
   const categories = [ALL, ...Array.from(new Set(quizzes.map((q) => q.category)))];
   const [active, setActive] = useState(ALL);
+
+  function handleFilter(cat: string) {
+    setActive(cat);
+    if (cat !== ALL) {
+      trackEvent("category_filter_used", { category: cat });
+    }
+  }
 
   const filtered = active === ALL ? quizzes : quizzes.filter((q) => q.category === active);
 
@@ -19,7 +27,7 @@ export function QuizGrid({ quizzes }: { quizzes: Quiz[] }) {
           <button
             key={cat}
             type="button"
-            onClick={() => setActive(cat)}
+            onClick={() => handleFilter(cat)}
             className={`rounded-full px-4 py-1.5 text-sm font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
               active === cat
                 ? "bg-gray-900 text-white"
@@ -33,7 +41,7 @@ export function QuizGrid({ quizzes }: { quizzes: Quiz[] }) {
 
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
         {filtered.map((quiz) => (
-          <TestCard key={quiz.slug} quiz={quiz} />
+          <TestCard key={quiz.slug} quiz={quiz} source="browse" />
         ))}
       </div>
 

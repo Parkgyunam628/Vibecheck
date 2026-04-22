@@ -62,95 +62,92 @@ export default async function ResultPage({
     <div className="min-h-screen bg-gray-50">
       <main className="max-w-xl mx-auto px-4 py-10">
         <ResultReveal>
-        {/* Breadcrumb badge */}
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-100 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-purple-500 shadow-sm">
-          <span>Your result</span>
-          <span className="text-gray-300">·</span>
-          <span>{quiz.category}</span>
-        </div>
+          {/* Quiz context */}
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
+            {quiz.title}
+          </p>
 
-        {/* Result card */}
-        <div className="rounded-3xl overflow-hidden shadow-xl mb-6">
-          <div
-            className={`bg-gradient-to-br ${result.color} py-14 flex flex-col items-center gap-3`}
-          >
-            <span className="text-7xl">{result.emoji}</span>
-            <h1 className="text-3xl font-black text-white text-center px-4 text-balance">
-              {result.title}
-            </h1>
-            <p className="max-w-sm px-5 text-center text-sm font-medium leading-relaxed text-white/88">
-              {result.shareText}
-            </p>
+          {/* Result card */}
+          <div className="rounded-3xl overflow-hidden shadow-xl mb-6">
+            <div
+              className={`bg-gradient-to-br ${result.color} py-14 flex flex-col items-center gap-3`}
+            >
+              <span className="text-7xl">{result.emoji}</span>
+              <h1 className="text-3xl font-black text-white text-center px-4 text-balance">
+                {result.title}
+              </h1>
+              <p className="max-w-sm px-5 text-center text-sm font-medium leading-relaxed text-white/90">
+                {result.shareText}
+              </p>
+            </div>
+            <div className="bg-white p-6">
+              <p className="text-gray-700 text-base leading-relaxed">
+                {result.description}
+              </p>
+            </div>
           </div>
-          <div className="bg-white p-6">
-            <p className="text-gray-700 text-base leading-relaxed">
-              {result.description}
-            </p>
-          </div>
-        </div>
 
-        {/* Ad */}
-        <AdBanner slot="result" />
+          {/* Ad */}
+          <AdBanner slot="result" />
 
-        {/* Share section */}
-        <div className="mt-6 bg-white rounded-[28px] p-5 shadow-sm border border-gray-100">
-          <div className="mb-4">
-            <h2 className="text-xl font-bold text-gray-900">
-              Share your result 📤
+          {/* Share — primary action */}
+          <div className="mt-6 bg-white rounded-3xl p-5 shadow-sm border border-gray-100">
+            <h2 className="text-lg font-bold text-gray-900 mb-0.5">
+              Send it. See what they get. 📲
             </h2>
-            <p className="text-sm text-gray-400 mt-1">
-              Send it to a friend and see what they get.
+            <p className="text-sm text-gray-400 mb-4">
+              Most people are surprised by their friends&apos; results.
             </p>
+            <DownloadResultCard result={result} quiz={quiz} />
+            <div className="mt-4">
+              <ShareButtons result={result} quiz={quiz} />
+            </div>
           </div>
 
-          <DownloadResultCard result={result} quiz={quiz} />
-
-          <div className="mt-4">
-            <ShareButtons result={result} quiz={quiz} />
-          </div>
-        </div>
-
-        {/* Try another quiz — primary CTA */}
-        {related.length > 0 && (
-          <div className="mt-8">
-            <div className="flex items-end justify-between gap-4 mb-4">
-              <div>
-                <h2 className="text-lg font-bold text-gray-900">Try another one 👀</h2>
-                <p className="text-sm text-gray-400 mt-0.5">
-                  Keep the streak going — compare results with friends.
-                </p>
+          {/* Next quiz — recommended */}
+          {related.length > 0 && (
+            <div className="mt-8">
+              <div className="flex items-end justify-between gap-4 mb-3">
+                <div>
+                  <h2 className="text-base font-bold text-gray-900">What does your friend get? 👀</h2>
+                  <p className="text-xs text-gray-400 mt-0.5">
+                    Send them one of these and compare.
+                  </p>
+                </div>
+                <Link
+                  href="/"
+                  className="text-xs font-semibold text-purple-600 hover:text-purple-700 whitespace-nowrap"
+                >
+                  All quizzes →
+                </Link>
               </div>
-              <Link href="/" className="text-sm font-semibold text-purple-600 hover:text-purple-700 whitespace-nowrap">
-                See all →
-              </Link>
+              <div className="flex flex-col gap-4">
+                {related.map((q) => (
+                  <TestCard key={q.slug} quiz={q} source="recommended" />
+                ))}
+              </div>
             </div>
-            <div className="flex flex-col gap-4">
-              {related.map((q) => (
-                <TestCard key={q.slug} quiz={q} />
-              ))}
-            </div>
+          )}
+
+          {/* Retake */}
+          <div className="mt-6 grid grid-cols-2 gap-3">
+            <Link
+              href={`/test/${quiz.slug}/quiz`}
+              className="text-center py-3 rounded-xl border-2 border-gray-200 text-gray-500 font-semibold text-sm hover:bg-gray-50 transition-colors"
+            >
+              🔁 Retake
+            </Link>
+            <Link
+              href="/"
+              className="text-center py-3 rounded-xl border-2 border-gray-200 text-gray-500 font-semibold text-sm hover:bg-gray-50 transition-colors"
+            >
+              🏠 All quizzes
+            </Link>
           </div>
-        )}
 
-        {/* Secondary actions */}
-        <div className="mt-6 grid grid-cols-2 gap-3">
-          <Link
-            href={`/test/${quiz.slug}/quiz`}
-            className="text-center py-3 rounded-xl border-2 border-gray-200 text-gray-500 font-semibold text-sm hover:bg-gray-50 transition-colors"
-          >
-            🔁 Retake this quiz
-          </Link>
-          <Link
-            href="/"
-            className="text-center py-3 rounded-xl border-2 border-gray-200 text-gray-500 font-semibold text-sm hover:bg-gray-50 transition-colors"
-          >
-            🏠 All quizzes
-          </Link>
-        </div>
-
-        <div className="mt-8">
-          <AdBanner slot="bottom" />
-        </div>
+          <div className="mt-8">
+            <AdBanner slot="bottom" />
+          </div>
         </ResultReveal>
       </main>
 

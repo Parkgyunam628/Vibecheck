@@ -1,31 +1,34 @@
-type EventName =
-  | "quiz_started"
-  | "quiz_completed"
-  | "result_downloaded"
-  | "result_shared"
-  | "next_quiz_clicked"
-  | "quiz_retaken"
-  | "surprise_me_clicked";
+export type EventName =
+  | "quiz_clicked"           // any quiz card clicked (source tells where from)
+  | "quiz_completed"         // reached result page
+  | "result_shared"          // share button used
+  | "result_downloaded"      // image/story saved
+  | "category_filter_used"   // homepage category tab clicked
+  | "surprise_me_clicked"    // random quiz button
+  | "quiz_retaken";          // retake from result page
 
-interface EventProperties {
+export interface EventProperties {
   quiz_slug?: string;
   result_id?: string;
-  share_method?: string;
-  from_result?: string;
+  share_method?: string;     // "native" | "twitter" | "copy_caption" | "copy_link"
+  download_type?: string;    // "card" | "story"
+  source?: string;           // "homepage" | "recommended" | "featured" | "surprise"
+  category?: string;         // for category_filter_used
   destination_slug?: string;
 }
 
-// Drop-in ready for GA4: replace the body with gtag('event', name, properties)
-// or window.mixpanel?.track(name, properties), etc.
-export function trackEvent(name: EventName, properties?: EventProperties): void {
+// Drop-in ready for GA4 / Mixpanel.
+// To activate: set NEXT_PUBLIC_GA_ID in env and add the gtag script to layout.tsx,
+// then uncomment the gtag() call below.
+export function trackEvent(name: EventName, props?: EventProperties): void {
   if (typeof window === "undefined") return;
 
-  // Uncomment when GA4 is connected:
-  // if (typeof window.gtag === 'function') {
-  //   window.gtag('event', name, properties);
+  // GA4 — uncomment when ready:
+  // if (typeof window.gtag === "function") {
+  //   window.gtag("event", name, props);
   // }
 
   if (process.env.NODE_ENV === "development") {
-    console.log("[Analytics]", name, properties ?? {});
+    console.log("[Analytics]", name, props ?? {});
   }
 }

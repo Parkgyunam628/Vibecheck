@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vibecheck.app"),
+  metadataBase: new URL(SITE_URL),
   title: "VibeCheck — Personality Tests & Quizzes",
   description:
     "Discover your personality with viral quizzes. Are you the main character? What's your geek level? Share your results!",

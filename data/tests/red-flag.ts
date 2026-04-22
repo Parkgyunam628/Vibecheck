@@ -82,7 +82,7 @@ const quiz: Quiz = {
         {
           id: "q3c",
           text: "Feel happy, then immediate dread — 'what does this mean exactly'",
-          scores: { commitment_phobe: 2, overthinker: 1 },
+          scores: { overthinker: 3, commitment_phobe: 1 },
         },
         {
           id: "q3d",

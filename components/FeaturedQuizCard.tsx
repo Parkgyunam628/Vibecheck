@@ -1,10 +1,23 @@
+"use client";
+
 import Link from "next/link";
 import { Quiz } from "@/lib/types";
+import { trackEvent } from "@/lib/analytics";
 
-export function FeaturedQuizCard({ quiz, badge = "🔥 Trending" }: { quiz: Quiz; badge?: string }) {
+export function FeaturedQuizCard({
+  quiz,
+  badge = "🔥 Trending",
+}: {
+  quiz: Quiz;
+  badge?: string;
+}) {
   return (
-    <Link href={`/test/${quiz.slug}`} className="block group">
-      <div className="rounded-2xl overflow-hidden shadow-lg flex h-48 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-0.5">
+    <Link
+      href={`/test/${quiz.slug}`}
+      className="block group"
+      onClick={() => trackEvent("quiz_clicked", { quiz_slug: quiz.slug, source: "featured" })}
+    >
+      <div className="rounded-2xl overflow-hidden shadow-lg flex h-48 transition-shadow duration-300 group-hover:shadow-xl group-hover:-translate-y-0.5 transition-transform">
         <div
           className={`bg-gradient-to-br ${quiz.coverColor} w-2/5 flex-shrink-0 flex items-center justify-center`}
         >

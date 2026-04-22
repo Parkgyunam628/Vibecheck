@@ -1,4 +1,5 @@
 import { Quiz, QuizResult } from "@/lib/types";
+import { DISPLAY_URL } from "@/lib/site";
 
 export function StoryResultCard({
   result,
@@ -74,7 +75,7 @@ export function StoryResultCard({
           {quiz.title}
         </p>
         <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 13, marginTop: 4 }}>
-          vibecheck.app
+          {DISPLAY_URL}
         </p>
       </div>
     </div>

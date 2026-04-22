@@ -3,6 +3,7 @@
 import { useMemo, useState, useEffect } from "react";
 import { Quiz, QuizResult } from "@/lib/types";
 import { trackEvent } from "@/lib/analytics";
+import { SITE_URL } from "@/lib/site";
 
 async function tryClipboardWrite(text: string): Promise<boolean> {
   try {
@@ -42,7 +43,7 @@ export function ShareButtons({
   const url =
     typeof window !== "undefined"
       ? window.location.href
-      : `https://vibecheck-tawny.vercel.app/test/${quiz.slug}/result/${result.id}`;
+      : `${SITE_URL}/test/${quiz.slug}/result/${result.id}`;
 
   const shareMessage = useMemo(
     () =>

@@ -33,17 +33,36 @@ export function getRelatedQuizzes(slug: string, count = 3): Quiz[] {
 
   if (!current) return others.slice(0, count);
 
-  // Score by tag overlap + same category
   const scored = others.map((q) => {
     const tagOverlap = q.tags.filter((t) => current.tags.includes(t)).length;
     const sameCategory = q.category === current.category ? 1 : 0;
-    return { quiz: q, score: tagOverlap + sameCategory };
+    return { quiz: q, score: tagOverlap * 2 + sameCategory };
   });
 
-  return scored
-    .sort((a, b) => b.score - a.score)
-    .slice(0, count)
-    .map((s) => s.quiz);
+  scored.sort((a, b) => b.score - a.score);
+
+  // Enforce diversity: at most 1 quiz from the same category in results
+  const result: typeof scored = [];
+  let sameCatCount = 0;
+
+  for (const item of scored) {
+    if (result.length >= count) break;
+    if (item.quiz.category === current.category) {
+      if (sameCatCount < 1) { result.push(item); sameCatCount++; }
+    } else {
+      result.push(item);
+    }
+  }
+
+  // Fill remaining slots with next best if needed
+  if (result.length < count) {
+    for (const item of scored) {
+      if (result.length >= count) break;
+      if (!result.includes(item)) result.push(item);
+    }
+  }
+
+  return result.map((s) => s.quiz);
 }
 
 export function calculateResult(

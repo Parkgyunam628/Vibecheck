@@ -190,7 +190,7 @@ const quiz: Quiz = {
         {
           id: "q7d",
           text: "Your whole bedroom, just in case",
-          scores: { homebody: 3, planner: 1 },
+          scores: { homebody: 3 },
         },
       ],
     },
