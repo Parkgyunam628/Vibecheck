@@ -87,7 +87,7 @@ export function ShareButtons({
       url,
     });
     window.open(
-      `https://x.com/intent/post?${params.toString()}`,
+      `https://twitter.com/intent/tweet?${params.toString()}`,
       "_blank",
       "noopener,noreferrer"
     );
