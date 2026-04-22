@@ -82,11 +82,12 @@ export function ShareButtons({
 
   function shareTwitter() {
     trackEvent("result_shared", { quiz_slug: quiz.slug, result_id: result.id, share_method: "twitter" });
-    const encoded = encodeURIComponent(
-      `${shareMessage} #personalityquiz #quiz`
-    );
+    const params = new URLSearchParams({
+      text: `${result.shareText} #personalityquiz #quiz`,
+      url,
+    });
     window.open(
-      `https://twitter.com/intent/tweet?text=${encoded}`,
+      `https://x.com/intent/post?${params.toString()}`,
       "_blank",
       "noopener,noreferrer"
     );
