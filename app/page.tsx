@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 import { AdBanner } from "@/components/AdBanner";
 
 // Curated section slugs — update as quiz library grows
-const SEND_TO_A_FRIEND = ["friend-role-test", "red-flag-test", "texter-type-test"];
+const SEND_TO_A_FRIEND = ["easy-to-love-test", "dater-type-test", "good-friend-test"];
 const FEATURED_SLUG = "main-character-test";
 
 export default function HomePage() {

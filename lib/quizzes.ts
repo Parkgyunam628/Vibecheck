@@ -7,6 +7,10 @@ import villainEra from "@/data/tests/villain-era";
 import travelType from "@/data/tests/travel-type";
 import introvertTest from "@/data/tests/introvert-test";
 import friendRole from "@/data/tests/friend-role";
+import daterType from "@/data/tests/dater-type";
+import easyToLove from "@/data/tests/easy-to-love";
+import goodFriend from "@/data/tests/good-friend";
+import auraTest from "@/data/tests/aura-test";
 
 const quizzes: Quiz[] = [
   mainCharacter,
@@ -17,6 +21,10 @@ const quizzes: Quiz[] = [
   travelType,
   introvertTest,
   friendRole,
+  daterType,
+  easyToLove,
+  goodFriend,
+  auraTest,
 ];
 
 export function getAllQuizzes(): Quiz[] {
