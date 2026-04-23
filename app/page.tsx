@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getAllQuizzes } from "@/lib/quizzes";
 import { TestCard } from "@/components/TestCard";
 import { FeaturedQuizCard } from "@/components/FeaturedQuizCard";
@@ -26,10 +27,10 @@ export default function HomePage() {
       {/* Header */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-10">
         <div className="max-w-2xl mx-auto px-4 py-3.5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <span className="text-xl">✨</span>
             <span className="font-bold text-lg text-gray-900">VibeCheck</span>
-          </div>
+          </Link>
           <span className="text-xs font-medium text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full">
             {quizzes.length} quizzes
           </span>
