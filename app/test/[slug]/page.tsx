@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getQuizBySlug, getAllQuizzes } from "@/lib/quizzes";
 import { AdBanner } from "@/components/AdBanner";
 import { Footer } from "@/components/Footer";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export async function generateStaticParams() {
   return getAllQuizzes().map((q) => ({ slug: q.slug }));
@@ -33,7 +34,8 @@ export default async function TestIntroPage({
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <main className="flex-1 flex flex-col items-center justify-center px-4 py-12 max-w-xl mx-auto w-full">
+      <SiteHeader />
+      <main className="flex-1 flex flex-col items-center px-4 py-8 max-w-xl mx-auto w-full">
 
         {/* Cover card */}
         <div className="w-full rounded-3xl overflow-hidden shadow-xl mb-8">

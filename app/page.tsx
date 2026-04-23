@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getAllQuizzes } from "@/lib/quizzes";
 import { TestCard } from "@/components/TestCard";
 import { FeaturedQuizCard } from "@/components/FeaturedQuizCard";
@@ -7,6 +6,7 @@ import { QuizGrid } from "@/components/QuizGrid";
 import { CompletionBadge } from "@/components/CompletionBadge";
 import { Footer } from "@/components/Footer";
 import { AdBanner } from "@/components/AdBanner";
+import { SiteHeader } from "@/components/SiteHeader";
 
 // Curated section slugs — update as quiz library grows
 const SEND_TO_A_FRIEND = ["easy-to-love-test", "dater-type-test", "good-friend-test"];
@@ -24,18 +24,11 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-100 sticky top-0 z-10">
-        <div className="max-w-2xl mx-auto px-4 py-3.5 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <span className="text-xl">✨</span>
-            <span className="font-bold text-lg text-gray-900">VibeCheck</span>
-          </Link>
-          <span className="text-xs font-medium text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full">
-            {quizzes.length} quizzes
-          </span>
-        </div>
-      </header>
+      <SiteHeader>
+        <span className="text-xs font-medium text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full">
+          {quizzes.length} quizzes
+        </span>
+      </SiteHeader>
 
       <main className="max-w-2xl mx-auto px-4">
         {/* Hero */}

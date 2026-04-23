@@ -7,6 +7,7 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { DownloadResultCard } from "@/components/DownloadResultCard";
 import { ResultReveal } from "@/components/ResultReveal";
 import { Footer } from "@/components/Footer";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export async function generateStaticParams() {
   const params: { slug: string; resultId: string }[] = [];
@@ -60,6 +61,7 @@ export default async function ResultPage({
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SiteHeader />
       <main className="max-w-xl mx-auto px-4 py-10">
         <ResultReveal>
           {/* Quiz context */}

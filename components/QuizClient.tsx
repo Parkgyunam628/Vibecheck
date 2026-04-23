@@ -7,6 +7,7 @@ import { Quiz } from "@/lib/types";
 import { calculateResult } from "@/lib/quizzes";
 import { trackEvent } from "@/lib/analytics";
 import { markQuizCompleted } from "@/lib/completions";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export function QuizClient({ quiz }: { quiz: Quiz }) {
   const router = useRouter();
@@ -42,6 +43,7 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
 
   return (
     <div className="h-dvh bg-gray-50 flex flex-col overflow-hidden">
+      <SiteHeader />
       {/* Progress bar */}
       <div className="w-full h-1.5 bg-gray-200 flex-shrink-0">
         <motion.div
