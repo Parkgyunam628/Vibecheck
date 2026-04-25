@@ -26,6 +26,11 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className="min-h-full">
         {children}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6908087123216234"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
         {GA_ID && (
           <>
             <Script
