@@ -50,8 +50,19 @@ export default function HomePage() {
 
         <AdBanner slot="top" />
 
-        {/* Everyone's taking this */}
+        {/* All Tests */}
         <section className="mt-10">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider">
+              🗂️ All Tests
+            </h2>
+            <span className="text-xs text-gray-400">{quizzes.length} total</span>
+          </div>
+          <QuizGrid quizzes={quizzes} />
+        </section>
+
+        {/* Everyone's taking this */}
+        <section className="mt-12">
           <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">
             🔥 Everyone&apos;s taking this
           </h2>
@@ -78,17 +89,6 @@ export default function HomePage() {
             </div>
           </section>
         )}
-
-        {/* All Tests */}
-        <section className="mt-10">
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider">
-              🗂️ All Tests
-            </h2>
-            <span className="text-xs text-gray-400">{quizzes.length} total</span>
-          </div>
-          <QuizGrid quizzes={quizzes} />
-        </section>
 
         <div className="mt-10">
           <AdBanner slot="bottom" />
