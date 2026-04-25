@@ -80,7 +80,7 @@ const quiz: Quiz = {
         },
         {
           id: "q3c",
-          text: "Finally work on your passion project / side hustle",
+          text: "Finally start that thing you keep saying you'll do",
           scores: { chosen_one: 3, main: 1 },
         },
         {
@@ -227,9 +227,9 @@ const quiz: Quiz = {
       title: "Main Character Energy",
       emoji: "🌟",
       description:
-        "Congrats, you're the protagonist. Life happens TO you and you feel every single moment dramatically and beautifully. You have depth, you have complexity, and you definitely have a carefully curated aesthetic. Your story is one people actually want to follow.",
+        "You're the protagonist. Everything that happens to you is also a scene in the movie of your life — and somewhere in the back of your mind, you know it. You process things loudly, you have a whole aesthetic, and there's always a running internal monologue. People end up invested in how your story goes. You kind of love that.",
       shareText:
-        "I got Main Character Energy on the Main Character Test 🌟 Find out what energy you are →",
+        "I got Main Character Energy on the Main Character Test 🌟 which one are you? →",
       color: "from-purple-500 to-pink-500",
     },
     {
@@ -239,7 +239,7 @@ const quiz: Quiz = {
       description:
         "You're not just a main character — you're THE ONE. People sense there's something different about you. You move with purpose, handle chaos without flinching, and somehow always know what to do. The prophecy was about you all along.",
       shareText:
-        "I got The Chosen One on the Main Character Test ⚡ Find out what energy you are →",
+        "I got The Chosen One on the Main Character Test ⚡ which one are you? →",
       color: "from-yellow-400 to-orange-500",
     },
     {
@@ -247,9 +247,9 @@ const quiz: Quiz = {
       title: "Loyal Sidekick",
       emoji: "🤝",
       description:
-        "You're the best friend everyone wishes they had. Supportive, funny, real — and honestly? The sidekick is always the fan favorite. You bring warmth to every room and loyalty to every relationship. The main character would be LOST without you.",
+        "You're the one people call when things actually matter. Funny, loyal, and completely solid under pressure. You don't need the spotlight — you're the reason the good memories happened at all. The main character talks about you all the time. Usually while saying how lost they'd be without you.",
       shareText:
-        "I got Loyal Sidekick on the Main Character Test 🤝 Find out what energy you are →",
+        "I got Loyal Sidekick on the Main Character Test 🤝 which one are you? →",
       color: "from-green-400 to-teal-500",
     },
     {
@@ -257,9 +257,9 @@ const quiz: Quiz = {
       title: "Pure NPC Energy",
       emoji: "🗿",
       description:
-        "You exist. You walk around. You eat snacks. And honestly? That's valid. Not everyone needs to be on their protagonist arc 24/7. You're chilling in the background, unbothered, living your best invisible life. The rarest and most underrated character type.",
+        "You exist. You walk around. You eat snacks. Not everything has to be a moment — you've somehow worked that out while everyone else is busy narrating their life out loud. Unbothered. Background. Completely at peace with it. The most underestimated character type in any story.",
       shareText:
-        "I got Pure NPC Energy on the Main Character Test 🗿 Find out what energy you are →",
+        "I got Pure NPC Energy on the Main Character Test 🗿 which one are you? →",
       color: "from-gray-400 to-slate-600",
     },
   ],

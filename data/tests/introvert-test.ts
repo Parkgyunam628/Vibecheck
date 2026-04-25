@@ -92,7 +92,7 @@ const quiz: Quiz = {
     },
     {
       id: "q4",
-      text: "What actually recharges you?",
+      text: "What recharges you?",
       options: [
         {
           id: "q4a",

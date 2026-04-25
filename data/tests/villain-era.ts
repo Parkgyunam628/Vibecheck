@@ -258,7 +258,7 @@ const quiz: Quiz = {
       title: "Misunderstood Anti-Hero",
       emoji: "🌑",
       description:
-        "You were never actually the villain — you just stopped performing for people who had already decided how they felt about you. Your so-called 'villain era' was really just the first time you stopped over-explaining your existence. Complex, layered, and ultimately on the right side of history.",
+        "You were never the villain — you just stopped performing for people who had already decided how they felt about you. What everyone called your 'villain era' was the first time you stopped justifying yourself. Complex, layered, and not particularly interested in being understood by everyone.",
       shareText:
         "I got Misunderstood Anti-Hero on the Villain Era Test 🌑 what's your villain era? →",
       color: "from-violet-600 to-indigo-700",
