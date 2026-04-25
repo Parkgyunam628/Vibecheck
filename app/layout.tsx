@@ -24,13 +24,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className="min-h-full">
-        {children}
-        <Script
+      <head>
+        {/* AdSense — raw tag so it appears in SSR HTML for ownership verification */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script
+          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6908087123216234"
-          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
+      </head>
+      <body className="min-h-full">
+        {children}
         {GA_ID && (
           <>
             <Script
