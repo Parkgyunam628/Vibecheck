@@ -2,7 +2,7 @@ import { Quiz } from "@/lib/types";
 
 const quiz: Quiz = {
   slug: "introvert-test",
-  title: "Are You Actually an Introvert?",
+  title: "Are You an Introvert?",
   description:
     "A lot of people call themselves introverts. Most of them are lying. Let's find out the truth 🌙",
   emoji: "🌙",
@@ -229,7 +229,7 @@ const quiz: Quiz = {
       description:
         "This is real. You're not performing it for aesthetic reasons — you are genuinely, deeply energized by solitude and drained by social interaction. People can be wonderful, and you care about yours. But when you need to restore? You need to be alone, properly, with no one asking anything of you. The world is loud. Your inner world is where you actually live.",
       shareText:
-        "I got Full Introvert on the Introvert Test 🌙 are you actually an introvert? →",
+        "I got Full Introvert on the Introvert Test 🌙 are you an introvert? →",
       color: "from-indigo-600 to-violet-800",
     },
     {
@@ -239,7 +239,7 @@ const quiz: Quiz = {
       description:
         "You love people — specific people, in the right doses. You can be the most engaging person in the room, and you genuinely enjoy connection. But afterward, you go home and you need the walls. You're not antisocial. You just have a recharge requirement that extroverts don't, and honoring that isn't rude — it's how you stay sane.",
       shareText:
-        "I got Social Introvert on the Introvert Test 🎭 are you actually an introvert? →",
+        "I got Social Introvert on the Introvert Test 🎭 are you an introvert? →",
       color: "from-purple-500 to-pink-600",
     },
     {
@@ -249,7 +249,7 @@ const quiz: Quiz = {
       description:
         "You are neither — and that's not a cop-out. Your social battery is genuinely context-dependent: certain people charge you, others drain you. Some environments feel electric, others feel suffocating. You don't have a default setting. You have a read-the-room setting. Most people say they're ambiverts. You actually are one.",
       shareText:
-        "I got The True Ambivert on the Introvert Test ⚖️ are you actually an introvert? →",
+        "I got The True Ambivert on the Introvert Test ⚖️ are you an introvert? →",
       color: "from-teal-400 to-cyan-600",
     },
     {
@@ -259,7 +259,7 @@ const quiz: Quiz = {
       description:
         "You've been calling yourself an introvert for years. It's a personality. But the data says otherwise. You get energy from people. You feel better after social time, not worse. You miss people when you're alone too long. There's nothing wrong with this — but it might be time to accept that you are, in fact, a person who likes people. A lot.",
       shareText:
-        "I got Closet Extrovert on the Introvert Test ☀️ are you actually an introvert? →",
+        "I got Closet Extrovert on the Introvert Test ☀️ are you an introvert? →",
       color: "from-amber-400 to-orange-500",
     },
   ],

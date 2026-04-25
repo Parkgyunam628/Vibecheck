@@ -4,7 +4,7 @@ const quiz: Quiz = {
   slug: "villain-era-test",
   title: "What's Your Villain Era?",
   description:
-    "Some of us are deep in it. Some of us never left. Which kind of villain are you, really? 😈",
+    "Some of us are deep in it. Some of us never left. Which kind are you? 😈",
   emoji: "😈",
   coverColor: "from-slate-800 to-violet-900",
   category: "Personality",

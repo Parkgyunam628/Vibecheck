@@ -4,7 +4,7 @@ const quiz: Quiz = {
   slug: "main-character-test",
   title: "Are You the Main Character?",
   description:
-    "Find out if you're living your protagonist era or just background NPC energy 👀",
+    "Find out if you're living your protagonist era or just background NPC era 👀",
   emoji: "🎬",
   coverColor: "from-purple-600 to-pink-600",
   category: "Personality",

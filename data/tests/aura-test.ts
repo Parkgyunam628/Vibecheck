@@ -4,7 +4,7 @@ const quiz: Quiz = {
   slug: "aura-test",
   title: "What's Your Aura?",
   description:
-    "Everyone in the room feels it before you say a word. Time to find out what it actually is. ✨",
+    "Everyone feels it before you say a word. Time to find out what it is. ✨",
   emoji: "🔮",
   coverColor: "from-violet-500 to-fuchsia-600",
   category: "Personality",

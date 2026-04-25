@@ -4,7 +4,7 @@ const quiz: Quiz = {
   slug: "red-flag-test",
   title: "What's Your Red Flag?",
   description:
-    "Everyone has one. Some people have four. Which dating archetype are you really? 🚩",
+    "Everyone has one. Some people have four. Time to find out yours. 🚩",
   emoji: "🚩",
   coverColor: "from-red-500 to-rose-600",
   category: "Relationships",

@@ -4,7 +4,7 @@ const quiz: Quiz = {
   slug: "travel-type-test",
   title: "What Kind of Traveler Are You?",
   description:
-    "Lounge access or a 40L backpack? You can't be both. Let's find out where you actually land ✈️",
+    "Lounge access or a 40L backpack? You can't be both. Let's find out where you land. ✈️",
   emoji: "✈️",
   coverColor: "from-sky-400 to-blue-600",
   category: "Lifestyle",

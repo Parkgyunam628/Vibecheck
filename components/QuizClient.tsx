@@ -18,6 +18,7 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
   const question = quiz.questions[currentIndex];
   const progress = (currentIndex / quiz.questions.length) * 100;
   const isLast = currentIndex === quiz.questions.length - 1;
+  const isFirst = currentIndex === 0;
 
   function handleSelect(optionId: string) {
     setSelected(optionId);
@@ -37,8 +38,23 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
       return;
     }
 
+    const nextQuestion = quiz.questions[currentIndex + 1];
     setCurrentIndex((i) => i + 1);
-    setSelected(null);
+    setSelected(newAnswers[nextQuestion.id] ?? null);
+  }
+
+  function handlePrev() {
+    if (isFirst) return;
+
+    // Save current selection before going back so it's preserved if they return
+    const newAnswers = selected
+      ? { ...answers, [question.id]: selected }
+      : answers;
+    setAnswers(newAnswers);
+
+    const prevQuestion = quiz.questions[currentIndex - 1];
+    setCurrentIndex((i) => i - 1);
+    setSelected(newAnswers[prevQuestion.id] ?? null);
   }
 
   return (
@@ -98,18 +114,29 @@ export function QuizClient({ quiz }: { quiz: Quiz }) {
             </motion.div>
           </AnimatePresence>
 
-          <button
-            type="button"
-            onClick={handleNext}
-            disabled={!selected}
-            className={`mt-8 w-full py-4 rounded-2xl font-bold text-base transition-all duration-200 ${
-              selected
-                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg active:scale-[0.98]"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed"
-            }`}
-          >
-            {isLast ? "See My Result ✨" : "Next →"}
-          </button>
+          <div className="mt-8 w-full flex gap-3">
+            {!isFirst && (
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="py-4 px-5 rounded-2xl font-bold text-base border-2 border-gray-200 bg-white text-gray-500 active:bg-gray-50 transition-colors duration-100 flex-shrink-0"
+              >
+                ← Back
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={handleNext}
+              disabled={!selected}
+              className={`flex-1 py-4 rounded-2xl font-bold text-base transition-all duration-200 ${
+                selected
+                  ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg active:scale-[0.98]"
+                  : "bg-gray-200 text-gray-400 cursor-not-allowed"
+              }`}
+            >
+              {isLast ? "See My Result ✨" : "Next →"}
+            </button>
+          </div>
         </div>
       </div>
     </div>

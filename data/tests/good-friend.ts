@@ -2,8 +2,8 @@ import { Quiz } from "@/lib/types";
 
 const quiz: Quiz = {
   slug: "good-friend-test",
-  title: "Are You Actually a Good Friend?",
-  description: "The group chat is watching. Be honest. 👯",
+  title: "Are You a Good Friend?",
+  description: "Your group chat is watching. Be honest. 👯",
   emoji: "🫂",
   coverColor: "from-teal-500 to-emerald-600",
   category: "Relationships",
@@ -228,7 +228,7 @@ const quiz: Quiz = {
       description:
         "You show up. Full stop. When something goes wrong at 2am, you're the person they call — because they know you'll actually answer. You don't keep score, you don't wait for them to reach out first, and you don't disappear when it gets hard. Friendships like yours are the reason people feel less alone in the world.",
       shareText:
-        "I got The Ride-or-Die on the Good Friend Test 💚 are you actually a good friend? →",
+        "I got The Ride-or-Die on the Good Friend Test 💚 are you a good friend? →",
       color: "from-emerald-500 to-teal-600",
     },
     {
@@ -238,7 +238,7 @@ const quiz: Quiz = {
       description:
         "You don't do the most — but you're always exactly there when it matters. You remember the small details. You don't need to be the loudest in the room to be the most important person in it. Your friends don't always realize how much they rely on you until you're not around. That's not a flaw. That's just what quiet loyalty looks like.",
       shareText:
-        "I got The Low-Key Legendary One on the Good Friend Test 🌙 are you actually a good friend? →",
+        "I got The Low-Key Legendary One on the Good Friend Test 🌙 are you a good friend? →",
       color: "from-indigo-500 to-violet-600",
     },
     {
@@ -248,7 +248,7 @@ const quiz: Quiz = {
       description:
         "You're a great time when times are great. Celebrations, good vibes, and good news — you're there. It's the 10pm 'I'm not okay' texts where things get inconsistent. This doesn't make you a bad person. It makes you someone who has more to give than they're currently giving. Your friends like you. They just can't fully count on you yet.",
       shareText:
-        "I got The Fair-Weather Friend on the Good Friend Test ☀️ are you actually a good friend? →",
+        "I got The Fair-Weather Friend on the Good Friend Test ☀️ are you a good friend? →",
       color: "from-yellow-400 to-amber-500",
     },
     {
@@ -258,7 +258,7 @@ const quiz: Quiz = {
       description:
         "You genuinely care. The caring is real. You just also have a habit of letting life get in the way of acting on it. You mean to call. You plan to be there. The gap between your intentions and your actions is the only thing standing between you and being the friend you already think you are. Close the gap.",
       shareText:
-        "I got Good Intentions on the Good Friend Test 📱 are you actually a good friend? →",
+        "I got Good Intentions on the Good Friend Test 📱 are you a good friend? →",
       color: "from-orange-400 to-rose-500",
     },
   ],

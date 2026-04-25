@@ -4,7 +4,7 @@ const quiz: Quiz = {
   slug: "geek-level-test",
   title: "What's Your Geek Level?",
   description:
-    "From casual fan to full-on nerd overlord — where do you actually land? 🤓",
+    "From casual fan to full-on nerd overlord — where do you land? 🤓",
   emoji: "🤓",
   coverColor: "from-blue-600 to-cyan-500",
   category: "Personality",
