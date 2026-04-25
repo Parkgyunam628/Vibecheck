@@ -106,7 +106,7 @@ const quiz: Quiz = {
         },
         {
           id: "q4c",
-          text: "This is the good part. This is actually the story.",
+          text: "This is the good part. This is the whole story.",
           scores: { adventurer: 3 },
         },
         {

@@ -11,6 +11,10 @@ import daterType from "@/data/tests/dater-type";
 import easyToLove from "@/data/tests/easy-to-love";
 import goodFriend from "@/data/tests/good-friend";
 import auraTest from "@/data/tests/aura-test";
+import situationshipTest from "@/data/tests/situationship-test";
+import crushModeTest from "@/data/tests/crush-mode-test";
+import friendRedFlagTest from "@/data/tests/friend-red-flag-test";
+import cityEnergyTest from "@/data/tests/city-energy-test";
 
 const quizzes: Quiz[] = [
   mainCharacter,
@@ -25,6 +29,10 @@ const quizzes: Quiz[] = [
   easyToLove,
   goodFriend,
   auraTest,
+  situationshipTest,
+  crushModeTest,
+  friendRedFlagTest,
+  cityEnergyTest,
 ];
 
 export function getAllQuizzes(): Quiz[] {

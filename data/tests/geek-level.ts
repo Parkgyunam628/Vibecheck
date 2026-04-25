@@ -170,26 +170,26 @@ const quiz: Quiz = {
     },
     {
       id: "q7",
-      text: "How do you feel about the word 'actually'?",
+      text: "You find out you've been mispronouncing a nerd thing for years. You:",
       options: [
         {
           id: "q7a",
-          text: "It's just a word?",
+          text: "Laugh it off — you barely knew about it anyway",
           scores: { casual: 3 },
         },
         {
           id: "q7b",
-          text: "I use it occasionally when I need to clarify something",
+          text: "Feel briefly embarrassed, then move on",
           scores: { fan: 2 },
         },
         {
           id: "q7c",
-          text: "It's my way of gently correcting people who are wrong",
+          text: "Immediately correct yourself and never make that mistake again",
           scores: { geek: 3 },
         },
         {
           id: "q7d",
-          text: "I start 40% of my sentences with it and I'm not sorry",
+          text: "Research the etymology to understand how you got it wrong",
           scores: { overlord: 3 },
         },
       ],
@@ -227,9 +227,9 @@ const quiz: Quiz = {
       title: "Casual Enjoyer",
       emoji: "😎",
       description:
-        "You're culturally aware without being consumed by any one thing. You watch the big shows, play a game or two, and live a beautifully balanced life. You're the person who makes everyone feel included because you know a little about everything.",
+        "You watch the big shows, have seen the big movies, and can hold your own in almost any pop culture conversation. You're not obsessed with anything — and that turns out to be a personality. In every friend group, you're the one who actually has a social life. Statistically, this makes you the most functional person here.",
       shareText:
-        "I got Casual Enjoyer on the Geek Level Test 😎 What's your geek level? →",
+        "I got Casual Enjoyer on the Geek Level Test 😎 what's your geek level? →",
       color: "from-sky-400 to-blue-500",
     },
     {
@@ -237,9 +237,9 @@ const quiz: Quiz = {
       title: "Passionate Fan",
       emoji: "🔥",
       description:
-        "You have your things and you love them deeply. You know your lore, you have opinions, and you could talk for hours about your favorite franchises. You're in the fandoms but you haven't lost touch with the outside world. Yet.",
+        "You have your things and you love them deeply. You know the lore, you have opinions, and you could convert someone to your fandom if given 20 minutes and a good opening. You're fully in it — but the outside world can still reach you. For now.",
       shareText:
-        "I got Passionate Fan on the Geek Level Test 🔥 What's your geek level? →",
+        "I got Passionate Fan on the Geek Level Test 🔥 what's your geek level? →",
       color: "from-orange-400 to-red-500",
     },
     {
@@ -247,9 +247,9 @@ const quiz: Quiz = {
       title: "Certified Geek",
       emoji: "🤓",
       description:
-        "You've gone deep. You have niche interests that most people don't understand, strong opinions about things normal people don't even know exist, and a browser history that would confuse and impress in equal measure. Embrace it.",
+        "You've gone deep. You have niche interests most people don't understand, strong opinions about things most people don't even know exist, and a browser history that would confuse and impress in equal measure. You don't need anyone's approval — but you'd love to find someone who gets it.",
       shareText:
-        "I got Certified Geek on the Geek Level Test 🤓 What's your geek level? →",
+        "I got Certified Geek on the Geek Level Test 🤓 what's your geek level? →",
       color: "from-blue-500 to-cyan-500",
     },
     {
@@ -257,9 +257,9 @@ const quiz: Quiz = {
       title: "Nerd Overlord",
       emoji: "🧠",
       description:
-        "You have transcended normal geekdom. You don't just consume — you build, create, optimize, and obsessively document. You probably have a custom setup, a strong framework for everything, and at least one project no one else fully understands. We're not worthy.",
+        "You have transcended normal geekdom. You don't just consume — you build, optimize, document, and hold strong opinions about the correct way to do things. You have a custom setup, at least one project nobody else fully understands, and a framework for everything. We are not worthy.",
       shareText:
-        "I got Nerd Overlord on the Geek Level Test 🧠 What's your geek level? →",
+        "I got Nerd Overlord on the Geek Level Test 🧠 what's your geek level? →",
       color: "from-violet-600 to-purple-700",
     },
   ],

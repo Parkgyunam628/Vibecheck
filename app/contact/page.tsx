@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
+import { SiteHeader } from "@/components/SiteHeader";
 import type { Metadata } from "next";
+
+// To update the contact email, change this one constant
+const CONTACT_EMAIL = "contact@my-vibecheck.com";
 
 export const metadata: Metadata = {
   title: "Contact | VibeCheck",
@@ -10,39 +14,56 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <header className="bg-white border-b border-gray-100">
-        <div className="max-w-2xl mx-auto px-4 py-3.5 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold text-gray-900">
-            <span>✨</span>
-            <span>VibeCheck</span>
-          </Link>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-1 max-w-2xl mx-auto px-4 py-12 w-full">
         <div className="max-w-lg">
           <h1 className="text-3xl font-black text-gray-900 mb-2">Contact</h1>
-          <p className="text-gray-500 mb-10">We'd love to hear from you.</p>
+          <p className="text-gray-500 mb-10">
+            Questions, feedback, or a quiz idea? We read everything.
+          </p>
 
-          <div className="space-y-6 text-gray-700 leading-relaxed">
+          <div className="space-y-4">
             <div className="rounded-2xl bg-gray-50 p-6 border border-gray-100">
-              <h2 className="font-bold text-gray-900 mb-1">General inquiries</h2>
-              <p className="text-sm text-gray-500 mb-3">
-                Quiz suggestions, feedback, or anything else.
+              <h2 className="font-bold text-gray-900 mb-1">Say hello</h2>
+              <p className="text-sm text-gray-500 mb-4">
+                Quiz suggestions, feedback, collabs, or anything else —
+                drop us a line.
               </p>
               <a
-                href="mailto:kevin965546184644@gmail.com"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-purple-600 hover:text-purple-700"
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-purple-600 hover:text-purple-700 transition-colors"
               >
-                ✉️ Send us an email
+                ✉️ {CONTACT_EMAIL}
               </a>
             </div>
 
             <div className="rounded-2xl bg-gray-50 p-6 border border-gray-100">
               <h2 className="font-bold text-gray-900 mb-1">Found a bug?</h2>
-              <p className="text-sm text-gray-500">
-                Something broken or a quiz that doesn't make sense? Let us know and we'll fix it.
+              <p className="text-sm text-gray-500 mb-4">
+                Something broken, a quiz that doesn&apos;t add up, or a result
+                that feels off? Let us know.
               </p>
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=Bug%20report`}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-purple-600 hover:text-purple-700 transition-colors"
+              >
+                🐛 Report a bug
+              </a>
+            </div>
+
+            <div className="rounded-2xl bg-gray-50 p-6 border border-gray-100">
+              <h2 className="font-bold text-gray-900 mb-1">Have a quiz idea?</h2>
+              <p className="text-sm text-gray-500 mb-4">
+                We&apos;re always adding new quizzes. If you have an idea that
+                would go viral in your group chat, send it over.
+              </p>
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=Quiz%20idea`}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-purple-600 hover:text-purple-700 transition-colors"
+              >
+                💡 Send a quiz idea
+              </a>
             </div>
           </div>
 

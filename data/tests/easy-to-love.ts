@@ -224,7 +224,7 @@ const quiz: Quiz = {
   results: [
     {
       id: "genuinely_easy",
-      title: "Genuinely, Surprisingly Easy to Love",
+      title: "Genuinely Easy to Love",
       emoji: "🌸",
       description:
         "You communicate. You show up. You don't make people guess. In a world full of situationships and emotional mazes, you're the rare person who just says what they mean and means what they say. People fall for you quickly and stay for a long time. The fact that this feels normal to you is the most impressive part.",

@@ -9,7 +9,7 @@ import { AdBanner } from "@/components/AdBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 
 // Curated section slugs — update as quiz library grows
-const SEND_TO_A_FRIEND = ["easy-to-love-test", "dater-type-test", "good-friend-test"];
+const SEND_TO_A_FRIEND = ["situationship-test", "easy-to-love-test", "friend-red-flag-test"];
 const FEATURED_SLUG = "main-character-test";
 
 export default function HomePage() {
@@ -64,10 +64,10 @@ export default function HomePage() {
             <div className="flex items-baseline justify-between mb-3">
               <div>
                 <h2 className="text-sm font-bold text-gray-400 uppercase tracking-wider">
-                  📲 Tag someone in this
+                  📲 Send to a friend
                 </h2>
                 <p className="text-xs text-gray-400 mt-0.5">
-                  Better when you compare with friends
+                  Compare results. It gets personal.
                 </p>
               </div>
             </div>
