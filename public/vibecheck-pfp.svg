@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <!-- Brand gradient: violet → pink, diagonal -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1080" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+
+    <!-- Subtle inner vignette for depth -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="60%">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.18"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <rect width="1080" height="1080" fill="url(#vignette)"/>
+
+  <!--
+    V mark — two arms meeting at a bottom point.
+    Rendered as a thick rounded polyline so the ends and joint are
+    naturally rounded (clean, app-icon style), not sharp corners.
+
+    Geometry (1080×1080 canvas):
+      Left  top : (260, 310)
+      Center tip: (540, 720)
+      Right top : (820, 310)
+      Stroke    : 120 px
+
+    Visible bounds with stroke:
+      Left edge : 260 - 60 = 200   →  200 px from left    (safe inside circle crop)
+      Right edge: 820 + 60 = 880   →  200 px from right
+      Top edge  : 310 - 60 = 250   →  250 px from top
+      Bottom    : 720 + 60 = 780   →  300 px from bottom
+  -->
+  <polyline
+    points="260,310 540,720 820,310"
+    fill="none"
+    stroke="white"
+    stroke-width="120"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!--
+    Tiny sparkle at the bottom tip — ties to the ✨ in the site header.
+    A four-pointed star drawn as two overlapping rotated rectangles.
+    Size ~52 px, slight glow underneath.
+  -->
+  <!-- glow -->
+  <circle cx="540" cy="720" r="56" fill="white" opacity="0.20"/>
+  <!-- star shape -->
+  <g transform="translate(540,720)">
+    <polygon points="0,-26  5,-5  26,0  5,5  0,26  -5,5  -26,0  -5,-5"
+             fill="white"/>
+  </g>
+</svg>
