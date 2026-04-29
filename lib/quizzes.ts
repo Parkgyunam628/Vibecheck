@@ -15,6 +15,10 @@ import situationshipTest from "@/data/tests/situationship-test";
 import crushModeTest from "@/data/tests/crush-mode-test";
 import friendRedFlagTest from "@/data/tests/friend-red-flag-test";
 import cityEnergyTest from "@/data/tests/city-energy-test";
+import attachmentStyleTest from "@/data/tests/attachment-style-test";
+import partnerTypeTest from "@/data/tests/partner-type-test";
+import friendMakerTest from "@/data/tests/friend-maker-test";
+import aloneTimeTest from "@/data/tests/alone-time-test";
 
 const quizzes: Quiz[] = [
   mainCharacter,
@@ -33,6 +37,10 @@ const quizzes: Quiz[] = [
   crushModeTest,
   friendRedFlagTest,
   cityEnergyTest,
+  attachmentStyleTest,
+  partnerTypeTest,
+  friendMakerTest,
+  aloneTimeTest,
 ];
 
 export function getAllQuizzes(): Quiz[] {

@@ -6,7 +6,7 @@ const quiz: Quiz = {
   description: "Not where you're from. What energy you give.",
   emoji: "🌆",
   coverColor: "from-indigo-500 to-violet-600",
-  category: "Personality",
+  category: "Lifestyle",
   tags: ["vibe", "aesthetic", "personality", "city", "viral"],
   createdAt: "2026-04-26",
   isNew: true,

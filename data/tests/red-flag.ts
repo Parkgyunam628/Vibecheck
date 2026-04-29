@@ -45,7 +45,7 @@ const quiz: Quiz = {
       options: [
         {
           id: "q2a",
-          text: "Post about it on your finsta immediately",
+          text: "Post a cryptic Close Friends story immediately",
           scores: { phone_addict: 3 },
         },
         {

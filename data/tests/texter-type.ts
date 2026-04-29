@@ -127,7 +127,7 @@ const quiz: Quiz = {
         },
         {
           id: "q5b",
-          text: "Post a vague Instagram story and let people figure it out",
+          text: "Tell one person. They'll spread the word. That's enough.",
           scores: { one_worder: 3 },
         },
         {
