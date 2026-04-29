@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About | VibeCheck",
-  description: "VibeCheck is a collection of short, fun personality quizzes made for sharing.",
+  description:
+    "VibeCheck is a collection of short personality quizzes designed for sharing. Fast, visual, built for mobile — take a quiz and compare results with your group.",
 };
 
 export default function AboutPage() {

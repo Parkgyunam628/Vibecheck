@@ -4,6 +4,7 @@ import { getQuizBySlug, getAllQuizzes } from "@/lib/quizzes";
 import { AdBanner } from "@/components/AdBanner";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SITE_URL } from "@/lib/site";
 
 export async function generateStaticParams() {
   return getAllQuizzes().map((q) => ({ slug: q.slug }));
@@ -17,9 +18,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const quiz = getQuizBySlug(slug);
   if (!quiz) return {};
+  const url = `${SITE_URL}/test/${slug}`;
   return {
     title: `${quiz.title} | VibeCheck`,
     description: quiz.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${quiz.title} | VibeCheck`,
+      description: quiz.description,
+      type: "website",
+      url,
+    },
   };
 }
 

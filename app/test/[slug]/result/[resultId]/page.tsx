@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getQuizBySlug, getAllQuizzes, getRelatedQuizzes } from "@/lib/quizzes";
+import { SITE_URL } from "@/lib/site";
 import { TestCard } from "@/components/TestCard";
 import { AdBanner } from "@/components/AdBanner";
 import { ShareButtons } from "@/components/ShareButtons";
@@ -28,12 +29,16 @@ export async function generateMetadata({
   const quiz = getQuizBySlug(slug);
   const result = quiz?.results.find((r) => r.id === resultId);
   if (!quiz || !result) return {};
+  const url = `${SITE_URL}/test/${slug}/result/${resultId}`;
   return {
     title: `${result.emoji} ${result.title} | ${quiz.title} | VibeCheck`,
     description: result.description,
+    alternates: { canonical: url },
     openGraph: {
       title: `I got "${result.title}" ${result.emoji}`,
       description: result.shareText,
+      type: "website",
+      url,
       images: [{ url: `/test/${slug}/result/${resultId}/opengraph-image` }],
     },
     twitter: {

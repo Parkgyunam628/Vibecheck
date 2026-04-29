@@ -3,7 +3,7 @@ import { Quiz } from "@/lib/types";
 const quiz: Quiz = {
   slug: "easy-to-love-test",
   title: "Are You Easy to Love?",
-  description: "Someone had to ask. 🥺",
+  description: "Be honest — are you actually easy to love, or do you just think you are? Find out. 🥺",
   emoji: "🫀",
   coverColor: "from-pink-500 to-rose-600",
   category: "Relationships",

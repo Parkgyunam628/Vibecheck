@@ -8,7 +8,8 @@ const CONTACT_EMAIL = "contact@my-vibecheck.com";
 
 export const metadata: Metadata = {
   title: "Contact | VibeCheck",
-  description: "Get in touch with the VibeCheck team.",
+  description:
+    "Have a quiz idea, found a bug, or just want to say hi? Reach out to the VibeCheck team — we read everything.",
 };
 
 export default function ContactPage() {

@@ -9,11 +9,19 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "VibeCheck — Personality Tests & Quizzes",
   description:
-    "Discover your personality with viral quizzes. Are you the main character? What's your geek level? Share your results!",
+    "Short personality quizzes worth sending to friends. Discover your aura, red flag, dating type, friend role, and more. Results in 2 minutes.",
   openGraph: {
     title: "VibeCheck — Personality Tests & Quizzes",
-    description: "Find out who you really are. Take a quiz.",
+    description:
+      "Short personality quizzes worth sending to friends. Discover your aura, red flag, dating type, and more.",
     type: "website",
+    url: SITE_URL,
+    siteName: "VibeCheck",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VibeCheck — Personality Tests & Quizzes",
+    description: "Short personality quizzes worth sending to friends.",
   },
 };
 

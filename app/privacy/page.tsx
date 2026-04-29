@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | VibeCheck",
-  description: "VibeCheck Privacy Policy",
+  description:
+    "VibeCheck's privacy policy. No account required, quiz answers stay in your browser, and we don't sell your data.",
 };
 
 export default function PrivacyPage() {
