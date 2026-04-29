@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getQuizBySlug, getAllQuizzes, getRelatedQuizzes } from "@/lib/quizzes";
+import { getTraits } from "@/data/traits";
 import { SITE_URL } from "@/lib/site";
 import { TestCard } from "@/components/TestCard";
 import { AdBanner } from "@/components/AdBanner";
@@ -63,6 +64,7 @@ export default async function ResultPage({
   if (!result) notFound();
 
   const related = getRelatedQuizzes(slug, 3);
+  const traits = getTraits(slug, resultId);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -91,6 +93,21 @@ export default async function ResultPage({
               <p className="text-gray-700 text-base leading-relaxed">
                 {result.description}
               </p>
+              {traits.length > 0 && (
+                <div className="mt-5 pt-5 border-t border-gray-100">
+                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">
+                    If this is you
+                  </p>
+                  <ul className="space-y-2">
+                    {traits.map((trait, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                        <span className="mt-0.5 text-gray-300 shrink-0">→</span>
+                        <span>{trait}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
 
